@@ -1,17 +1,15 @@
-function checkAnswer(correctAnswer) {
-  const correctAnswer = document.querySelector('input[name="quiz"]:checked');
+function checkAnswer() {
+  let answer = 4;
+  let correctAnswer = document.querySelector('input[name="quiz"]:checked');
   if (correctAnswer) {
-    const userAnswer = correctAnswer.value;
-    if (userAnswer === correctAnswer) {
-      console.log(`Correct! Well done.: ${userAnswer}`);
+    let userAnswer = parseInt(correctAnswer.value);
+    if (userAnswer === answer) {
+      console.log(`Correct! Well done. ${userAnswer}`);
     } else {
       console.log("That's incorrect. Try again!");
     }
   }
-
-  document
-    .getElementById("submit-answer")
-    .addEventListener("click", function () {
-      checkAnswer("4");
-    });
 }
+
+const button = document.getElementById("submit-answer");
+button.addEventListener("click", checkAnswer);
